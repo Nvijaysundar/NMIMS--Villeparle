@@ -1,0 +1,341 @@
+========================================================
+        CAMPUS FOOD PASS SCANNER SYSTEM
+========================================================
+
+PROJECT TYPE:
+Real-Time Java Project Using Set Interface + DSA
+
+========================================================
+                    PROJECT STORY
+========================================================
+
+A large university is conducting a Tech Fest.
+
+Thousands of students visit the food court daily.
+
+Each student receives a unique Food Pass ID.
+
+RULES:
+1. A student can eat only once
+2. Duplicate entries must be blocked
+3. VIP students get special access
+4. Security monitors fraud attempts
+5. Admin wants crowd analytics
+
+Students must build the system using:
+- Java Set Interface
+- Exception Handling
+- DSA Concepts
+
+========================================================
+                CONCEPTS COVERED
+========================================================
+
+JAVA COLLECTIONS:
+-----------------
+1. HashSet
+2. LinkedHashSet
+3. TreeSet
+
+DSA CONCEPTS:
+-------------
+1. Sliding Window
+2. Two Pointers
+3. Frequency Counting
+4. Duplicate Detection
+5. Queue Concepts
+6. Hashing
+
+CORE JAVA:
+-----------
+1. OOP
+2. Exception Handling
+3. Custom Exceptions
+4. File Handling
+5. Menu Driven Program
+6. Comparable & Comparator
+
+========================================================
+                    MODULE 1
+             STUDENT ENTRY SCANNER
+========================================================
+
+OBJECTIVE:
+-----------
+Prevent duplicate food entries.
+
+DATA STRUCTURE:
+----------------
+HashSet<String>
+
+WHY HASHSET?
+--------------
+1. No duplicate values
+2. Fast searching
+3. O(1) average lookup time
+
+REAL-TIME FLOW:
+----------------
+
+Scan Student ID
+        |
+        V
+Check in HashSet
+        |
+  ----------------
+  |              |
+NO             YES
+  |              |
+Allow Entry    Duplicate Entry
+
+EXAMPLE:
+---------
+
+Input:
+S101
+S102
+S103
+S101
+
+Output:
+S101 Entry Allowed
+S102 Entry Allowed
+S103 Entry Allowed
+S101 Duplicate Entry Detected
+
+========================================================
+                    MODULE 2
+                 VIP ENTRY SYSTEM
+========================================================
+
+OBJECTIVE:
+-----------
+Maintain VIP students in sorted order.
+
+DATA STRUCTURE:
+----------------
+TreeSet<String>
+
+WHY TREESET?
+--------------
+1. Automatically sorts data
+2. No duplicates
+3. Useful for ranking systems
+
+EXAMPLE:
+---------
+
+Input:
+VIP104
+VIP101
+VIP103
+
+Output:
+VIP101
+VIP103
+VIP104
+
+========================================================
+                    MODULE 3
+              ENTRY HISTORY TRACKER
+========================================================
+
+OBJECTIVE:
+-----------
+Store entry history in insertion order.
+
+DATA STRUCTURE:
+----------------
+LinkedHashSet<String>
+
+WHY LINKEDHASHSET?
+-------------------
+1. Maintains insertion order
+2. Prevents duplicates
+
+EXAMPLE:
+---------
+
+Input:
+S101
+S105
+S103
+
+Output:
+S101
+S105
+S103
+
+========================================================
+                    MODULE 4
+                FRAUD DETECTION
+========================================================
+
+DSA CONCEPT:
+-------------
+Sliding Window
+
+STORY:
+-------
+Security suspects repeated duplicate scans
+within short time periods.
+
+TASK:
+------
+Find maximum duplicate attempts within
+window size K.
+
+EXAMPLE:
+---------
+
+Entries:
+S1 S2 S1 S3 S1 S2 S2
+
+K = 4
+
+WINDOWS:
+---------
+
+Window 1:
+S1 S2 S1 S3
+
+Window 2:
+S2 S1 S3 S1
+
+Window 3:
+S1 S3 S1 S2
+
+Window 4:
+S3 S1 S2 S2
+
+LEARNING:
+-----------
+1. Fixed Size Window
+2. Frequency Map
+3. Optimization
+4. Real-Time Monitoring
+
+========================================================
+                    MODULE 5
+               FAST COUNTER ANALYSIS
+========================================================
+
+DSA CONCEPT:
+-------------
+Two Pointers
+
+STORY:
+-------
+Admin wants longest continuous valid entry streak.
+
+EXAMPLE:
+---------
+
+Entries:
+S1 S2 S3 S1 S4 S5
+
+Longest Unique Sequence:
+S2 S3 S1 S4 S5
+
+Length = 5
+
+LEARNING:
+-----------
+1. Two Pointer Technique
+2. Dynamic Window
+3. Unique Subarray Problems
+
+========================================================
+                    MODULE 6
+               CUSTOM EXCEPTIONS
+========================================================
+
+CUSTOM EXCEPTION:
+------------------
+
+DuplicateEntryException
+
+REAL-TIME USAGE:
+-----------------
+
+If student scans again:
+Throw exception
+
+EXAMPLE:
+---------
+
+class DuplicateEntryException extends Exception
+{
+    public DuplicateEntryException(String msg)
+    {
+        super(msg);
+    }
+}
+
+========================================================
+                    MODULE 7
+                FILE HANDLING
+========================================================
+
+OBJECTIVE:
+-----------
+Store daily entry logs.
+
+FILE:
+------
+entries.txt
+
+SAMPLE DATA:
+-------------
+
+S101
+S102
+S105
+VIP101
+
+LEARNING:
+-----------
+1. FileWriter
+2. BufferedWriter
+3. Scanner
+4. Reading & Writing Files
+
+========================================================
+                    MODULE 8
+                MENU DRIVEN SYSTEM
+========================================================
+
+=============================
+1. Scan Student Entry
+2. Add VIP Student
+3. View Entry History
+4. Detect Fraud Activity
+5. Find Longest Valid Streak
+6. Save Logs
+7. Exit
+=============================
+
+
+========================================================
+                MINI CHALLENGES
+========================================================
+
+CHALLENGE 1:
+-------------
+Find Top 3 repeated fraud IDs
+
+CHALLENGE 2:
+-------------
+Find busiest hour using Sliding Window
+
+CHALLENGE 3:
+-------------
+Find duplicate count per student
+
+CHALLENGE 4:
+-------------
+Auto-remove expired entries after 24 hours
+
+
+========================================================
+```
